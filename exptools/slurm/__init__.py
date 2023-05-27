@@ -17,5 +17,11 @@ class AutoExecutor(submitit.AutoExecutor):
                  slurm_mem="8G", 
                  **kwargs: Any) -> None:
         # TODO: Add email functionality
-        super().__init__(folder=folder, **kwargs)
-        self.update_parameters(**kwargs)
+        super().__init__(folder=folder,
+                        slurm_job_name=slurm_job_name,
+                        slurm_constraint=slurm_constraint,
+                        slurm_gres=slurm_gres,
+                        slurm_nodes=slurm_nodes,
+                        slurm_time=slurm_time,
+                        slurm_mem=slurm_mem,
+                        **kwargs)
