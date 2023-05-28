@@ -1,7 +1,7 @@
 import pandas as pd
 from pathlib import Path
 
-def add_result(result: dict, filename: str = "results/experiment.csv"):
+def add_result(result: dict, filename: str="results/experiment.csv"):
     """
     Add the result of an experiment to a CSV file.
     Any new columns will be added to the CSV file.
@@ -24,7 +24,7 @@ def add_result(result: dict, filename: str = "results/experiment.csv"):
     # Save the file
     df.to_csv(filename, index=False)
 
-def merge_results(filename1: str, filename2: str, merged_filename: str = "results/experiment.csv"):
+def merge_results(filename1: str, filename2: str, merged_filename: str="results/experiment.csv"):
     """
     Merge two CSV files containing experiment results.
 
@@ -43,7 +43,3 @@ def merge_results(filename1: str, filename2: str, merged_filename: str = "result
 
     # Save the file
     df.to_csv(merged_filename, index=False)
-
-
-if __name__ == "__main__":
-    merge_results("results/results1.csv", "results/results2.csv")
