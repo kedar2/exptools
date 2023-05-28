@@ -1,6 +1,7 @@
 from setuptools import setup
 
 INSTALL_REQUIRES = [
+    'pandas',
     'submitit'
 ]
 
